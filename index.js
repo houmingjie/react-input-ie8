@@ -29,6 +29,7 @@ class Input extends Component {
         let type = e.type;
         if (type === 'compositionend') {
             this.onComposition = false
+            this.handleChange(this.state.value);
         } else if(type === 'compositionstart'|| type === 'compositionupdate'){//React 14.X版本的input在ie8下keyup,keydown也会触发composition事件
             this.onComposition = true
         }
@@ -73,4 +74,4 @@ Input.defaultProps = {
     },
 };
 
-export default Input
+export default Input;
